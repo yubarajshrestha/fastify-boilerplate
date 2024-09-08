@@ -4,7 +4,6 @@ import UserRepository from '@/src/repositories/user.repo'
 import { paginatedData } from '@/src/helpers/pagination.helper'
 import { NotFoundError } from '@/src/handlers/error.handler'
 import UserValidator from '@/src/validators/user.validator'
-import { AccessTokenMiddleware } from '@/src/middlewares/auth.middleware'
 
 /**************************
  * * Get users
