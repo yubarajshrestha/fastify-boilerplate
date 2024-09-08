@@ -1,0 +1,23 @@
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+/**/*.log
+.env
+build/
+dist/
+node_modules/
+**.sample
+coverage/*
+.nyc_output
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.DS_Store
+test-report.xml
+*.gz
+.env.prod
+coverage/

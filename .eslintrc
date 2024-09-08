@@ -1,0 +1,29 @@
+{
+    "root": true,
+    "env": {
+        "es2018": true,
+        "node": true
+    },
+    "extends": [
+        "standard",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "ignorePatterns": [
+        "node_modules",
+        "build",
+        "tests",
+        "coverage",
+        "src/database/seed"
+    ],
+    "rules": {
+        "no-new": 0
+    }
+}
