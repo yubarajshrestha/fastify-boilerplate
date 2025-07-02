@@ -100,12 +100,12 @@ class User extends Model implements IUser {
 	}
 
 	/// Generate authentication token
-	generateAuthToken(): { token: string; refreshToken: string } {
+	generateAuthToken(): { token: string; refresh_token: string } {
 		const token = encryptToHex(this.id);
-		const refreshToken = encryptToHex(this.id);
+		const refresh_token = encryptToHex(this.id);
 		return {
 			token,
-			refreshToken,
+			refresh_token,
 		};
 	}
 }
