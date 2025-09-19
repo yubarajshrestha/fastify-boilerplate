@@ -30,27 +30,11 @@ sequelize.authenticate().then(() => {
 server.setValidatorCompiler(ValidatorCompiler);
 
 server.setErrorHandler((error, _, reply) => {
-	if (error.validation) {
-		return reply.status(400).send({
-			message: error.message,
-			errors: error.validation,
-		});
-	}
-	if ((error as any).inner) {
-		const errors: Record<string, string> = {};
-		(error as any).inner.forEach((error) => {
-			if (!error.path) {
-				errors[error.path] = error.message;
-			} else {
-				errors.fields = "Invalid fields";
-			}
-		});
-		return reply.status(400).send({
-			message: error.message,
-			errors: errors,
-		});
-	}
-	return reply.status(error.statusCode || 500).send({ message: error.message });
+	return reply.status(error?.statusCode || 400).send({
+		status: "error",
+		message: error.message,
+		errors: (error as any).errors || {},
+	});
 });
 
 try {
